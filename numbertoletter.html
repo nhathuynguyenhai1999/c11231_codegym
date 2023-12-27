@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chuyển đổi số thành chữ</title>
+  <script>
+    function convertToWords() {
+      // Lấy giá trị số từ input
+      var number = document.getElementById('numberInput').value;
+
+      // Mảng chứa các chuỗi chữ tương ứng với các chữ số
+      var words = ["", "một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín"];
+
+      // Mảng chứa các chuỗi chữ tương ứng với các hàng đơn vị
+      var units = ["", "mươi", "trăm"];
+
+      // Chuyển đổi số thành chuỗi chữ
+      var result = "";
+      var numArray = number.toString().split('').map(Number);
+
+      for (var i = 0; i < numArray.length; i++) {
+        var digit = numArray[i];
+
+        if (digit !== 0) {
+          result += words[digit] + " " + units[numArray.length - i - 1] + " ";
+        }
+      }
+
+      // Hiển thị kết quả
+      document.getElementById('result').innerHTML = result.trim();
+    }
+  </script>
+</head>
+<body>
+<h2>Chuyển đổi số thành chữ</h2>
+<label for="numberInput">Nhập số:</label>
+<input type="text" id="numberInput">
+<button onclick="convertToWords()">Chuyển đổi</button>
+<p id="result"></p>
+</body>
+</html>

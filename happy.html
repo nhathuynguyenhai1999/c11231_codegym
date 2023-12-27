@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra số happy</title>
+</head>
+<body>
+
+<script>
+    function isHappyNumber(num) {
+        let seenNumbers = new Set();
+
+        while (num !== 1 && !seenNumbers.has(num)) {
+            seenNumbers.add(num);
+            num = sumOfSquares(num);
+        }
+
+        return num === 1;
+    }
+
+    function sumOfSquares(num) {
+        let sum = 0;
+
+        while (num > 0) {
+            let digit = num % 10;
+            sum += digit * digit;
+            num = Math.floor(num / 10);
+        }
+
+        return sum;
+    }
+
+    // Example usage
+    let numberToCheck = 19;
+    let isHappy = isHappyNumber(numberToCheck);
+
+    document.write('<p>' + numberToCheck + ' is ' + (isHappy ? 'happy' : 'not happy') + '.</p>');
+</script>
+
+</body>
+</html>

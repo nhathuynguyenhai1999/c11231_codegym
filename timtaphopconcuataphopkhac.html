@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm tất cả các tập con của một tập hợp đã cho</title>
+</head>
+<body>
+
+<script>
+    function findSubsets(set) {
+        let subsets = [];
+
+        function backtrack(start, currentSubset) {
+            subsets.push([...currentSubset]);
+
+            for (let i = start; i < set.length; i++) {
+                currentSubset.push(set[i]);
+                backtrack(i + 1, currentSubset);
+                currentSubset.pop();
+            }
+        }
+
+        backtrack(0, []);
+
+        return subsets;
+    }
+
+    // Example usage
+    let inputSet = [1, 2, 3];
+    let allSubsets = findSubsets(inputSet);
+
+    document.write('<p>Subsets of ' + JSON.stringify(inputSet) + ': ' + JSON.stringify(allSubsets) + '</p>');
+</script>
+
+</body>
+</html>

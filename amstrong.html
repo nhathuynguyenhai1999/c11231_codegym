@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xác định số của Amstrong</title>
+    <script>
+        function isArmstrongNumber(number) {
+            // Chuyển số thành chuỗi để lấy từng chữ số
+            var numStr = number.toString();
+            var numDigits = numStr.length;
+            var sum = 0;
+
+            // Tính tổng lũy thừa của các chữ số
+            for (var i = 0; i < numDigits; i++) {
+                sum += Math.pow(parseInt(numStr[i]), numDigits);
+            }
+
+            // Kiểm tra xem tổng có bằng số gốc không
+            return sum === number;
+        }
+
+        function checkArmstrong() {
+            var userInput = document.getElementById('numberInput').value;
+            var resultElement = document.getElementById('result');
+
+            // Kiểm tra xem đầu vào có phải là số không
+            if (isNaN(userInput)) {
+                resultElement.textContent = 'Vui lòng nhập một số.';
+                return;
+            }
+
+            var number = parseInt(userInput);
+
+            // Kiểm tra xem số có phải là số Armstrong không
+            if (isArmstrongNumber(number)) {
+                resultElement.textContent = number + ' là số Armstrong.';
+            } else {
+                resultElement.textContent = number + ' không là số Armstrong.';
+            }
+        }
+    </script>
+</head>
+<body>
+<h2>Kiểm tra số Armstrong</h2>
+<label for="numberInput">Nhập số: </label>
+<input type="text" id="numberInput">
+<button onclick="checkArmstrong()">Kiểm tra</button>
+<p id="result"></p>
+</body>
+</html>
