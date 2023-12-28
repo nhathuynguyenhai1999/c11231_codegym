@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Third Largest Number</title>
+</head>
+<body>
+
+<script>
+  // Hàm để tìm số lớn thứ ba trong mảng 2 chiều
+  function Solonthu3(matrix) {
+    let flatArray = matrix.flat(); // Chuyển mảng 2 chiều thành mảng 1 chiều
+    let cacsotrongmang = [...new Set(flatArray)]; // Lọc các số duy nhất
+
+    // Sắp xếp mảng theo thứ tự giảm dần
+    cacsotrongmang.sort((a, b) => b - a);
+
+    if (cacsotrongmang.length >= 3) {
+      return cacsotrongmang[2]; // Trả về số lớn thứ ba
+    } else {
+      return "Không có số lớn thứ ba";
+    }
+  }
+
+  // Mảng 2 chiều ví dụ
+  var mangMatrandacho = [[10, 5, 8], [15, 20, 25], [7, 12, 18]];
+
+  // Gọi hàm và hiển thị kết quả
+  var bienthan = Solonthu3(mangMatrandacho);
+  console.log("Số lớn thứ ba là:", bienthan);
+</script>
+
+</body>
+</html>
+

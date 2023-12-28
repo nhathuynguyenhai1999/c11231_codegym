@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kiểm tra mảng tăng dần hay giảm dần</title>
+</head>
+<body>
+
+<script>
+  function Kiemtramang(arr) {
+    // Kiểm tra xem mảng có phải là mảng tăng dần hay không
+    for (let i = 0; i < arr.length - 1; i++) {
+      if (arr[i] > arr[i + 1]) {
+        return false; // Nếu có phần tử không theo thứ tự, trả về false
+      }
+    }
+    return true; // Nếu mảng tăng dần, trả về true
+  }
+
+  // Ví dụ sử dụng
+  let mangcuatau = [1, 2, 3, 4, 5];
+  let arraygiam = Kiemtramang(mangcuatau);
+
+  if (arraygiam) {
+    alert("Mảng tăng dần.");
+  } else {
+    alert("Mảng không tăng dần.");
+  }
+</script>
+
+</body>
+</html>

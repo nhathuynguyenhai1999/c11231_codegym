@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mảng 2 chiều - Tính tổng đường chéo của 2 mảng</title>
+</head>
+<body>
+
+<script>
+  // Hàm tính tổng các đường chéo trong mảng 2D
+  function tongcacduongcheo(matran) {
+    let tongcheochinh = 0;
+    let tongcheophu = 0;
+
+    for (let i = 0; i < matrix.length; i++) {
+      tongcheochinh += matrix[i][i];
+      tongcheophu += matrix[i][matrix.length - 1 - i];
+    }
+
+    return {
+      tongcheochinh: tongcheochinh,
+      tongcheophu: tongcheophu
+    };
+  }
+
+  // Ví dụ mảng 2D
+  const matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+
+  // Calculate the sum of diagonals
+  const diagonalSums = sumOfDiagonals(matrix);
+
+  // Display the results
+  console.log("Tổng chéo chính: ", diagonalSums.tongcheochinh);
+  console.log("Tổng chéo phụ: ", diagonalSums.tongcheophu);
+</script>
+
+</body>
+</html>
+
