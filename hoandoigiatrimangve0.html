@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hoán đổi giá trị số lẻ thành 0 trong mảng 2 chiều</title>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Tạo một mảng 2 chiều
+      var array2D = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]
+      ];
+
+      // Hiển thị mảng trước khi hoán đổi
+      displayArray("Mảng trước khi hoán đổi", array2D);
+
+      // Hoán đổi giá trị số lẻ thành 0
+      for (var i = 0; i < array2D.length; i++) {
+        for (var j = 0; j < array2D[i].length; j++) {
+          if (array2D[i][j] % 2 !== 0) {
+            array2D[i][j] = 0;
+          }
+        }
+      }
+
+      // Hiển thị mảng sau khi hoán đổi
+      displayArray("Mảng sau khi hoán đổi", array2D);
+
+      function displayArray(title, array) {
+        var output = title + ":\n";
+        for (var i = 0; i < array.length; i++) {
+          output += array[i].join(" ") + "\n";
+        }
+        console.log(output);
+      }
+    });
+  </script>
+</head>
+<body>
+<!-- Không cần thêm nội dung HTML ở đây vì chúng ta chỉ sử dụng JavaScript -->
+</body>
+</html>

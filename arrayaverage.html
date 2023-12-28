@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trung bình cộng của mảng</title>
+</head>
+<body>
+
+<script>
+  // Mảng bất kỳ
+  var mang = [3, 7, 1, 8, 4, 5];
+
+  // Tính tổng các phần tử trong mảng
+  var tong = 0;
+  for (var i = 0; i < mang.length; i++) {
+    tong += mang[i];
+  }
+
+  // Tính trung bình cộng
+  var trungBinhCong = tong / mang.length;
+
+  // Hiển thị kết quả
+  alert("Mời xem kết quả ở console.log")
+  console.log("Mảng: " + mang.join(", ") + "<br>");
+  console.log("Tổng: " + tong + "<br>");
+  console.log("Trung bình cộng: " + trungBinhCong);
+</script>
+
+</body>
+</html>

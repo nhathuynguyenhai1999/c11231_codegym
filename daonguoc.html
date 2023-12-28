@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đảo ngược mảng</title>
+</head>
+<body>
+<!-- Giao diện đơn giản -->
+<h2>Đảo ngược mảng</h2>
+<label for="inputArray">Nhập mảng (các giá trị cách nhau bằng dấu phẩy): </label>
+<input type="text" id="inputArray" placeholder="1, 2, 3, 4, 5">
+<button onclick="reverseArray()">Đảo ngược</button>
+<p id="result"></p>
+
+<script>
+  // Hàm đảo ngược mảng
+  function reverseArray() {
+    // Lấy mảng từ thẻ input
+    var inputArray = document.getElementById("inputArray").value.split(',');
+
+    // Đảo ngược mảng
+    var reversedArray = inputArray.reverse();
+
+    // Hiển thị kết quả đảo ngược mảng
+    document.getElementById("result").innerHTML = "Mảng sau khi đảo ngược: " + reversedArray.join(', ');
+  }
+</script>
+</body>
+</html>
