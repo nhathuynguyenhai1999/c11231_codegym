@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compare Strings</title>
+  <script>
+    function compareStrings() {
+      // Lấy giá trị từ ô input cho chuỗi 1
+      var string1 = document.getElementById("string1").value;
+
+      // Lấy giá trị từ ô input cho chuỗi 2
+      var string2 = document.getElementById("string2").value;
+
+      // Kiểm tra xem hai chuỗi có giống nhau hay không
+      if (string1 === string2) {
+        document.getElementById("result").innerHTML = "Hai chuỗi giống nhau!";
+      } else {
+        document.getElementById("result").innerHTML = "Hai chuỗi khác nhau.";
+      }
+    }
+  </script>
+</head>
+<body>
+<h2>Kiểm tra hai chuỗi có giống nhau</h2>
+<label for="string1">Nhập chuỗi 1:</label>
+<input type="text" id="string1" placeholder="Nhập chuỗi 1">
+<br>
+<label for="string2">Nhập chuỗi 2:</label>
+<input type="text" id="string2" placeholder="Nhập chuỗi 2">
+<br>
+<button onclick="compareStrings()">Kiểm tra</button>
+<p id="result"></p>
+</body>
+</html>

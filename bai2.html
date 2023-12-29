@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reverse Array</title>
+  <script>
+    function reverseArray() {
+      // Lấy giá trị từ ô input
+      var inputArray = document.getElementById("inputArray").value;
+
+      // Chuyển chuỗi thành mảng ký tự
+      var charArray = inputArray.split('');
+
+      // Đảo ngược mảng
+      var reversedArray = charArray.reverse();
+
+      // Chuyển mảng ký tự thành chuỗi
+      var reversedString = reversedArray.join('');
+
+      // Hiển thị kết quả trên trang
+      document.getElementById("result").innerHTML = "Kết quả: " + reversedString;
+    }
+  </script>
+</head>
+<body>
+<h2>Đảo ngược mảng ký tự</h2>
+<label for="inputArray">Nhập mảng ký tự:</label>
+<input type="text" id="inputArray" placeholder="vd: c, s, c, 2, 6, 1">
+<button onclick="reverseArray()">Đảo ngược</button>
+<p id="result"></p>
+</body>
+</html>
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Replace Characters in Array</title>
+  <script>
+    function replaceCharacters() {
+      // Lấy giá trị từ ô input
+      var inputArray = document.getElementById("inputArray").value;
+
+      // Chuyển chuỗi thành mảng ký tự
+      var charArray = inputArray.split('');
+
+      // Thay thế các ký tự (-) bằng ký tự (_)
+      for (var i = 0; i < charArray.length; i++) {
+        if (charArray[i] === '-') {
+          charArray[i] = '_';
+        }
+      }
+
+      // Chuyển mảng ký tự thành chuỗi
+      var modifiedString = charArray.join('');
+
+      // Hiển thị kết quả trên trang
+      document.getElementById("result").innerHTML = "Kết quả: " + modifiedString;
+    }
+  </script>
+</head>
+<body>
+<h2>Thay thế ký tự trong mảng</h2>
+<label for="inputArray">Nhập mảng ký tự:</label>
+<input type="text" id="inputArray" placeholder="vd: a-b-c">
+<button onclick="replaceCharacters()">Thay thế</button>
+<p id="result"></p>
+</body>
+</html>

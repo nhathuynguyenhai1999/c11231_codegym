@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Count Numeric Characters</title>
+  <script>
+    function countNumericCharacters() {
+      // Khai báo mảng ký tự
+      var charArray = ['c', 's', 'c', '2', '6', '1'];
+
+      // Xác định kích thước của mảng
+      var arraySize = charArray.length;
+
+      // Khởi tạo biến đếm ký tự số
+      var numericCount = 0;
+
+      // Đếm số ký tự số trong mảng
+      for (var i = 0; i < arraySize; i++) {
+        if (!isNaN(charArray[i])) {
+          // Kiểm tra nếu phần tử là số
+          numericCount++;
+        }
+      }
+
+      // Hiển thị kết quả trên trang
+      document.getElementById("result").innerHTML = "Số ký tự số trong mảng: " + numericCount;
+    }
+  </script>
+</head>
+<body>
+<h2>Đếm số ký tự số trong mảng</h2>
+<button onclick="countNumericCharacters()">Đếm số ký tự số</button>
+<p id="result"></p>
+</body>
+</html>
